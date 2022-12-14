@@ -4,8 +4,6 @@
 class Calculator
 {
 public:
-	double num1;
-	double num2;
 	double add(double num1, double num2)
 	{
 		return num1 + num2;
@@ -48,6 +46,10 @@ public:
 		}
 		else { return false; }
 	}
+	Calculator() { num1 = 1; num2 = 1; }
+private:
+	double num1;
+	double num2;
 };
 
 int main(int argc, char** argv)
@@ -61,7 +63,7 @@ int main(int argc, char** argv)
 		std::cout << "Введите num2: ";
 		double num2;
 		std::cin >> num2;
-		Calculator calculator{ num1,num2 };
+		Calculator calculator;
 		if (calculator.set_num1(num1) == false)
 		{
 			while (calculator.set_num1(num1) == false)
